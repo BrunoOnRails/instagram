@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
+  include SuggestedUsers
+
   before_action :set_post, only: %i[ show ]
+  before_action :set_suggested_users, only: %i[index]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def show
@@ -13,11 +16,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params.merge(created_by: current_user))
 
     if @post.save
       redirect_to post_url(@post), notice: "Post criado com sucesso"
     else
+      flash.now[:alert] = @post.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -30,7 +34,7 @@ class PostsController < ApplicationController
 
 
   def post_params
-    params.require(:post).permit(:description)
+    params.require(:post).permit(:photo, :description)
   end
 
 end

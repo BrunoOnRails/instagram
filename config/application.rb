@@ -12,6 +12,8 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
+require "image_processing/mini_magick" 
+require 'rmagick'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -21,6 +23,7 @@ Bundler.require(*Rails.groups)
 module Instagram
   class Application < Rails::Application
     config.load_defaults 7.0
+    config.active_storage.variant_processor = :mini_magick
 
     config.i18n.default_locale = "pt-BR"
     config.time_zone = "Brasilia"

@@ -1,0 +1,8 @@
+<div id="user-actions" class="modal">
+    <div class="user-action">
+        <%= link_to "Editar perfil", edit_profile_path%>
+    </div>
+    <div class="user-action">
+        <%= link_to "Deslogar", destroy_user_session_path, method: :delete, data: { turbo_method: :get, turbo_confirm: "Deseja deslogar da sua conta ?" } %>
+    </div>
+</div>
