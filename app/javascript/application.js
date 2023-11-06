@@ -2,4 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "./flashMessages"
-import "./modal.js"
+import "./modal"
+import "./likes"

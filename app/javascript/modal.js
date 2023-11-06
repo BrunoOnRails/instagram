@@ -1,5 +1,5 @@
-import tingle from 'tingle.js';
-import 'tingle.js/src/tingle.css';
+//import tingle from 'tingle.js';
+//import 'tingle.js/src/tingle.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll("[data-modal-id]").forEach(button => {
