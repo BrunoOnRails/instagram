@@ -1,12 +1,12 @@
 <h2>Autenticação</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+  <div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class:"field" %>
   </div>
 
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder:"Senha" %>
+  <div>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder:"Senha", class:"field" %>
   </div>
 
   <div class="actions">

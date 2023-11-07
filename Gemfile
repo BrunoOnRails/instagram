@@ -77,3 +77,4 @@ gem "active_storage_validations", "~> 1.1"
 gem "mini_magick"
 
 gem 'rmagick'
+gem "redis", "~> 5.0"
